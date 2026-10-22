@@ -1,0 +1,135 @@
+/*  Color palette */
+:root {
+    --primary-blue: #2563EB;
+    --light-blue: #E8F0FE;
+    --text-grey: #6B7280;
+    --white: #FFFFFF;
+    --light-grey: #F8FAFC;
+    --dark-text: #1F2937;
+}
+
+*/Basic page styling * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Navbar styling */
+
+.navbar {
+    background-color: var(--white);
+    padding: 20px 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Website logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-blue);
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--dark-text);
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-blue);
+}
+
+
+
+/* Hero Section */
+.hero {
+    background-color: var(--light-grey);
+    padding: 100px 0;
+    text-align: center;
+}
+
+/* Hero content */
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Small introductory text */
+.hero-tagline {
+    color: var(--primary-blue);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Main heading */
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--dark-text);
+}
+
+/* Description */
+.hero-description {
+    font-size: 18px;
+    color: var(--text-grey);
+    margin-bottom: 32px;
+}
+
+/* Compare Policies button */
+.btn-solid {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.theme-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.theme-primary:hover {
+    background-color: #1D4ED8;
+}
