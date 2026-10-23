@@ -1,0 +1,70 @@
+{
+  "policies": [
+    {
+      "id": "1",
+      "type": "Motor Insurance",
+      "provider": "Sample Insurance A",
+      "price": 5000,
+      "description": "Sample motor insurance policy for vehicles."
+    },
+    {
+      "id": "2",
+      "type": "Health Insurance",
+      "provider": "Sample Insurance B",
+      "price": 8000,
+      "description": "Sample health insurance policy for medical expenses."
+    },
+    {
+      "id": "3",
+      "type": "Home Insurance",
+      "provider": "Sample Insurance C",
+      "price": 4000,
+      "description": "Sample home insurance policy for property protection."
+    },
+    {
+      "id": "4",
+      "type": "Life Insurance",
+      "provider": "Sample Insurance D",
+      "price": 6000,
+      "description": "Sample life insurance policy for financial protection."
+    }
+  ],
+  "comparisonRequests": [
+    {
+      "customerName": "Beryl",
+      "insuranceType": "Health Insurance",
+      "id": "7bYThgPMc1E"
+    },
+    {
+      "customerName": "lesa",
+      "insuranceType": "Health Insurance",
+      "id": "GhAfxXFJ7MQ"
+    },
+    {
+      "customerName": "lesa",
+      "insuranceType": "Health Insurance",
+      "id": "kNdtQJ_UT2I"
+    },
+    {
+      "customerName": "lesa",
+      "insuranceType": "Motor Insurance",
+      "id": "ThTZhaXe42g"
+    },
+    {
+      "customerName": "tr",
+      "insuranceType": "Life Insurance",
+      "id": "IMTPiozjGaU"
+    },
+    {
+      "customerName": "tr",
+      "insuranceType": "Motor Insurance",
+      "id": "X7PSNPr1Cl0"
+    },
+    {
+      "customerName": "Beryl",
+      "insuranceType": "Health Insurance",
+      "id": "yUd6llM3nwY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

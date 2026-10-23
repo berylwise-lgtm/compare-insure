@@ -1,24 +1,36 @@
-/*  Color palette */
+
+
 :root {
-    --primary-blue: #2563EB;
-    --light-blue: #E8F0FE;
-    --text-grey: #6B7280;
+    --forest-green: #174C3C;
+    --emerald-green: #238568;
+    --ivory: #FAF8F2;
+    --champagne-gold: #D6B875;
+    --dark-charcoal: #252D2A;
     --white: #FFFFFF;
-    --light-grey: #F8FAFC;
-    --dark-text: #1F2937;
+    --light-green: #EAF2ED;
+    --muted-text: #68736D;
+    --border-color: #E5E9E3;
 }
 
-*/Basic page styling * {
+
+
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--white);
-    color: var(--dark-text);
-    line-height: 1.6;
+    color: var(--dark-charcoal);
+    line-height: 1.7;
 }
 
 .container {
@@ -36,100 +48,567 @@ ul {
     list-style: none;
 }
 
+.section-padding {
+    padding: 90px 0;
+}
 
-/* Navbar styling */
+
+/* ========================================
+   3. NAVIGATION BAR
+======================================== */
 
 .navbar {
-    background-color: var(--white);
+    background-color: var(--ivory);
     padding: 20px 0;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 25px;
 }
 
 /* Website logo */
-.logo {
+
+.logo,
+.footer-logo {
     font-size: 24px;
-    font-weight: bold;
-    color: var(--primary-blue);
+    font-weight: 800;
+    color: var(--forest-green);
+    white-space: nowrap;
+    letter-spacing: -0.8px;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--emerald-green);
 }
 
 /* Navigation links */
+
 .nav-links {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 28px;
 }
 
 .nav-links a {
-    color: var(--dark-text);
-    font-size: 16px;
+    color: var(--dark-charcoal);
+    font-size: 14px;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--primary-blue);
+    color: var(--emerald-green);
 }
 
+/* Navbar button */
 
-
-/* Hero Section */
-.hero {
-    background-color: var(--light-grey);
-    padding: 100px 0;
-    text-align: center;
-}
-
-/* Hero content */
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Small introductory text */
-.hero-tagline {
-    color: var(--primary-blue);
+.nav-button {
+    background-color: var(--forest-green);
+    color: var(--white);
+    padding: 11px 20px;
+    border-radius: 6px;
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-/* Main heading */
-.hero h1 {
-    font-size: 48px;
-    line-height: 1.2;
-    margin-bottom: 24px;
-    color: var(--dark-text);
-}
-
-/* Description */
-.hero-description {
-    font-size: 18px;
-    color: var(--text-grey);
-    margin-bottom: 32px;
-}
-
-/* Compare Policies button */
-.btn-solid {
-    display: inline-block;
-    padding: 14px 28px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.theme-primary {
-    background-color: var(--primary-blue);
-    color: var(--white);
+    white-space: nowrap;
     transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
-.theme-primary:hover {
-    background-color: #1D4ED8;
+.nav-button:hover {
+    background-color: var(--emerald-green);
 }
+
+
+/* ========================================
+   4. HERO SECTION
+======================================== */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(214, 184, 117, 0.15),
+            transparent 32%
+        ),
+        var(--ivory);
+    padding: 110px 0;
+    overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero-tagline,
+.section-tagline {
+    color: var(--emerald-green);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: var(--forest-green);
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--emerald-green);
+}
+
+.hero-description {
+    color: var(--muted-text);
+    font-size: 17px;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+/* Hero buttons */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-solid,
+.btn-outline {
+    display: inline-block;
+    padding: 14px 23px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.theme-primary {
+    background-color: var(--forest-green);
+    color: var(--white);
+    border: 1px solid var(--forest-green);
+}
+
+.theme-primary:hover {
+    background-color: var(--emerald-green);
+    border-color: var(--emerald-green);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--forest-green);
+    color: var(--forest-green);
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--light-green);
+    transform: translateY(-2px);
+}
+
+.hero-note {
+    margin-top: 24px;
+    color: var(--muted-text);
+    font-size: 13px;
+}
+
+
+/* Hero decorative card */
+
+.hero-decoration {
+    flex-shrink: 0;
+    width: 280px;
+    padding: 12px;
+    background-color: rgba(214, 184, 117, 0.2);
+    border: 1px solid rgba(214, 184, 117, 0.5);
+    border-radius: 16px;
+    transform: rotate(2deg);
+}
+
+.decoration-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px 18px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(23, 76, 60, 0.08);
+    transform: rotate(-2deg);
+}
+
+.decoration-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    background-color: var(--light-green);
+    color: var(--forest-green);
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.decoration-card h3 {
+    color: var(--forest-green);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.decoration-card p {
+    color: var(--muted-text);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   5. SECTION HEADINGS
+======================================== */
+
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2,
+.about-content h2 {
+    color: var(--forest-green);
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.25;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+}
+
+.section-heading > p:not(.section-tagline) {
+    color: var(--muted-text);
+    font-size: 16px;
+}
+
+
+/* ========================================
+   6. INSURANCE CATEGORIES
+======================================== */
+
+.services {
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.service-card {
+    padding: 30px 24px;
+    background-color: var(--ivory);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--champagne-gold);
+    box-shadow: 0 14px 35px rgba(23, 76, 60, 0.08);
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    background-color: var(--light-green);
+    color: var(--forest-green);
+    font-size: 25px;
+}
+
+.service-card h3 {
+    color: var(--forest-green);
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--muted-text);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.service-card a {
+    color: var(--emerald-green);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.service-card a:hover {
+    color: var(--forest-green);
+}
+
+
+/* ========================================
+   7. HOW IT WORKS
+======================================== */
+
+.how-it-works {
+    background-color: var(--ivory);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.step-card {
+    padding: 30px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.step-number {
+    display: inline-block;
+    color: var(--emerald-green);
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.step-card h3 {
+    color: var(--forest-green);
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    color: var(--muted-text);
+    font-size: 14px;
+}
+
+
+/* ========================================
+   8. ABOUT SECTION
+======================================== */
+
+.about {
+    background-color: var(--white);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    margin-bottom: 22px;
+}
+
+.about-content > p:not(.section-tagline) {
+    color: var(--muted-text);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   9. COMPARE SECTION
+======================================== */
+
+.compare-section {
+    background-color: var(--forest-green);
+}
+
+.compare-section .section-tagline {
+    color: var(--champagne-gold);
+}
+
+.compare-section .section-heading h2 {
+    color: var(--white);
+}
+
+.compare-section .section-heading > p:not(.section-tagline) {
+    color: #E1E9E4;
+    margin-bottom: 28px;
+}
+
+.compare-section .theme-primary {
+    background-color: var(--champagne-gold);
+    color: var(--forest-green);
+    border-color: var(--champagne-gold);
+}
+
+.compare-section .theme-primary:hover {
+    background-color: var(--white);
+    border-color: var(--white);
+}
+
+
+/* ========================================
+   10. FOOTER
+======================================== */
+
+.footer {
+    background-color: var(--dark-charcoal);
+    color: var(--white);
+    text-align: center;
+    padding: 45px 0;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.footer-logo span {
+    color: var(--champagne-gold);
+}
+
+.footer p {
+    color: #D1D8D3;
+    font-size: 13px;
+}
+
+.footer-copy {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #414B45;
+}
+
+
+/* ========================================
+   11. RESPONSIVE DESIGN
+======================================== */
+
+/* Tablets and smaller laptops */
+
+@media (max-width: 1000px) {
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .hero .container {
+        gap: 30px;
+    }
+
+    .hero-decoration {
+        width: 240px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* Mobile phones */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 16px 0;
+    }
+
+    .navbar .container {
+        justify-content: center;
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .nav-button {
+        padding: 9px 16px;
+    }
+
+    .hero {
+        padding: 75px 0;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-decoration {
+        width: 100%;
+        max-width: 320px;
+        margin: 10px auto 0;
+    }
+
+    .section-padding {
+        padding: 65px 0;
+    }
+
+    .services-grid,
+    .steps-grid 
+        grid-
+
+
