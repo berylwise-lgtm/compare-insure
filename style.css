@@ -53,9 +53,7 @@ ul {
 }
 
 
-/* ========================================
-   3. NAVIGATION BAR
-======================================== */
+
 
 .navbar {
     background-color: var(--ivory);
@@ -73,7 +71,7 @@ ul {
     gap: 25px;
 }
 
-/* Website logo */
+
 
 .logo,
 .footer-logo {
@@ -89,7 +87,7 @@ ul {
     color: var(--emerald-green);
 }
 
-/* Navigation links */
+
 
 .nav-links {
     display: flex;
@@ -108,7 +106,7 @@ ul {
     color: var(--emerald-green);
 }
 
-/* Navbar button */
+
 
 .nav-button {
     background-color: var(--forest-green);
@@ -126,9 +124,7 @@ ul {
 }
 
 
-/* ========================================
-   4. HERO SECTION
-======================================== */
+
 
 .hero {
     background:
@@ -182,7 +178,7 @@ ul {
     margin-bottom: 32px;
 }
 
-/* Hero buttons */
+
 
 .hero-buttons {
     display: flex;
@@ -236,8 +232,6 @@ ul {
     font-size: 13px;
 }
 
-
-/* Hero decorative card */
 
 .hero-decoration {
     flex-shrink: 0;
@@ -309,9 +303,7 @@ ul {
 }
 
 
-/* ========================================
-   6. INSURANCE CATEGORIES
-======================================== */
+
 
 .services {
     background-color: var(--white);
@@ -375,11 +367,6 @@ ul {
     color: var(--forest-green);
 }
 
-
-/* ========================================
-   7. HOW IT WORKS
-======================================== */
-
 .how-it-works {
     background-color: var(--ivory);
 }
@@ -417,10 +404,6 @@ ul {
 }
 
 
-/* ========================================
-   8. ABOUT SECTION
-======================================== */
-
 .about {
     background-color: var(--white);
 }
@@ -440,11 +423,6 @@ ul {
     font-size: 16px;
     margin-bottom: 30px;
 }
-
-
-/* ========================================
-   9. COMPARE SECTION
-======================================== */
 
 .compare-section {
     background-color: var(--forest-green);
@@ -475,9 +453,7 @@ ul {
 }
 
 
-/* ========================================
-   10. FOOTER
-======================================== */
+
 
 .footer {
     background-color: var(--dark-charcoal);
@@ -508,12 +484,6 @@ ul {
 }
 
 
-/* ========================================
-   11. RESPONSIVE DESIGN
-======================================== */
-
-/* Tablets and smaller laptops */
-
 @media (max-width: 1000px) {
 
     .navbar .container {
@@ -539,7 +509,7 @@ ul {
 }
 
 
-/* Mobile phones */
+
 
 @media (max-width: 700px) {
 
@@ -604,8 +574,13 @@ ul {
         padding: 65px 0;
     }
 
-    .services-grid,
-    .steps-grid 
-        grid-
+    
+.services-grid,
+.steps-grid {
+    grid-template-columns: 1fr;
+}
+
+
+}
 
 
